@@ -18,6 +18,7 @@ $orders = get_all('orders', $options);
 $status = array(
     0 => 'Chưa xử lý',
     1 => 'Đã xử lý',
-    2 => 'Đã từ chối'
+    2 => 'Đã từ chối',
+    3 => 'Đã giao'
 );
 require('admin/views/order/index.php');

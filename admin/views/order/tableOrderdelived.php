@@ -37,8 +37,8 @@ $status = array(
                         <td>
                             <a href="admin.php?controller=order&amp;action=view&amp;oid=<?php echo $order['Id']; ?>"
                                class="text-danger"><i class="glyphicon glyphicon-edit"></i></a>
-                            <a href="admin.php?controller=order&amp;action=delete&amp;oid=<?php echo $order['Id']; ?>&amp;org=process"
-                               class="text-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                            <!-- <a href="admin.php?controller=order&amp;action=delete&amp;oid=<?php echo $order['Id']; ?>&amp;org=process"
+                               class="text-danger"><i class="glyphicon glyphicon-remove"></i></a> -->
                                
                         </td>
                     </tr>

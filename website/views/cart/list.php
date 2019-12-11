@@ -79,7 +79,7 @@
 		<div class="btn-group" style="padding-right: 30%;">
 			<input type="submit" class="form-control btn-primary" value="Cập nhật"/>
 		</div>
-		<a href="cart/order/checkout" class="btn btn-primary"><i class="glyphicon glyphicon-list-alt"></i> Đơn hàng</a>
+		<a href="cart/order/checkout" class="btn btn-primary"><i class="glyphicon glyphicon-list-alt"></i> Đặt hàng</a>
 	</div>	
 </div>
 

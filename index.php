@@ -29,5 +29,6 @@ if (file_exists($file)) {
     require($file);
 } else {
     show_404();
+print("<pre>".print_r($_GET,true)."</pre>");
+    
 }
-

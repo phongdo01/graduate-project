@@ -15,14 +15,14 @@
 		vertical-align: middle!important;
 	}
 </style>
-    <div id="page-wrapper">
-        <div class="panel panel-default">
+<div id="page-wrapper">
+    <div class="panel panel-default">
 
-            <div class="col-xs-12">
-                <h3>Thông tin đơn hàng</h3>
+        <div class="col-xs-12">
+            <h3>Thông tin đơn hàng</h3>
 
-                <table id="order_detail" class="table table-bordered table-hover">
-                    <thead>
+            <table id="order_detail" class="table table-bordered table-hover">
+                <thead>
                     <tr>
                         <th class="hidden-xs">STT</th>
                         <th class="hidden-xs">Ảnh</th>
@@ -31,8 +31,8 @@
                         <th>Giá KM</th>
                         <th>SL</th>
                     </tr>
-                    </thead>
-                    <tbody>
+                </thead>
+                <tbody>
                     <?php
                     $stt = 0;
                     $order_total = 0;
@@ -67,56 +67,75 @@
                             </td>
                         </tr>
                     <?php endforeach; ?>
-                    </tbody>
-                    <tfoot>
+                </tbody>
+                <tfoot>
                     <tr>
                         <td colspan="6">
                             <h4>Thành tiền : <?php echo number_format($order_total,0,',','.'); ?> VNĐ</h4>
                         </td>
                     </tr>
-                    </tfoot>
-                </table>
-            </div>
+                </tfoot>
+            </table>
+        </div>
 
-            <style type="text/css">
-                #info td {
-                    text-align: left;
-                }
-            </style>
+        <style type="text/css">
+            #info td {
+                text-align: left;
+            }
+        </style>
 
-            <div class="col-xs-12">
-                <h3>Thông tin khách hàng</h3>
+        <div class="col-xs-12">
+            <h3>Thông tin khách hàng</h3>
 
-                <table id="info" class="table">
-                    <tr>
-                        <td>Họ và tên</td>
-                        <td><?php echo $order['Customer']; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Địa chỉ</td>
-                        <td><?php echo $order['Address']; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Di động</td>
-                        <td><?php echo $order['Phone']; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td><?php echo $order['Createtime']; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td><?php echo $order['Email']; ?></td>
-                    </tr>
-                </table>
-
-                <form id="order_form" method="post" action="admin.php?controller=order&amp;action=complete" role="form">
+            <table id="info" class="table">
+                <tr>
+                    <td>Họ và tên</td>
+                    <td><?php echo $order['Customer']; ?></td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ</td>
+                    <td><?php echo $order['Address']; ?></td>
+                </tr>
+                <tr>
+                    <td>Di động</td>
+                    <td><?php echo $order['Phone']; ?></td>
+                </tr>
+                <tr>
+                    <td>Thời gian</td>
+                    <td><?php echo $order['Createtime']; ?></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><?php echo $order['Email']; ?></td>
+                </tr>
+            </table>
+            <!-- voi don hang chua xu ly -->
+            <?php if ($statusOrder==0){ ?>
+                <form id="order_form" method="post" action="admin.php?controller=order&amp;action=complete&amp;orderid=<?php echo $orderId; ?>" role="form">
                     <div class="form-group">
-                        <input name="oid" type="hidden" value="<?php echo $order['Id']; ?>"/>
-                        <button style="display: <?php echo ($statusOrder==1) ? 'none' : 'inline-block';?>" type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i> Xử lý xong</button>
-                        <a href="admin.php?controller=order" class="btn btn-warning">Quay lại</a>
+                        <button style="display: <?php echo ($statusOrder==1) ? 'none' : 'inline-block';?>" type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i> Duyệt</button>
+                        <a href="admin.php?controller=order&amp;action=delete&amp;oid=<?php echo $orderId; ?>&amp;org=process" class="btn btn-warning">Từ chối</a>
                     </div>
                 </form>
+                <?php }?>
+                <!-- voi don hang da xu ly -->
+                <?php if ($statusOrder==1){ ?>
+                <form id="order_form" method="post" action="admin.php?controller=order&amp;action=delived&amp;orderid=<?php echo $orderId; ?>" role="form">
+                    <div class="form-group">
+                        <button  type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i> Đã giao</button>
+                        <a href="admin.php?controller=order&amp;action=delete&amp;oid=<?php echo $orderId; ?>org=complete" class="btn btn-warning">Trả lại</a>
+                    </div>
+                </form>
+                <?php }?>
+                <!-- voi don hang da giao -->
+                <?php if ($statusOrder==3){ ?>
+                <form id="order_form" method="post" action="admin.php?controller=order&amp;action=complete" role="form">
+                    <!-- <div class="form-group">
+                        <button  type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i> Đã giao</button>
+                        <a href="admin.php?controller=order" class="btn btn-warning">Quay lại</a>
+                    </div> -->
+                </form>
+                <?php }?>
             </div>
         </div>
     </div>

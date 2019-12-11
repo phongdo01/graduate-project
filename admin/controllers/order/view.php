@@ -12,5 +12,6 @@ $title = 'Chi tiết đơn hàng';
 $user = $_SESSION['user'];
 $order_detail = order_detail($oid);
 $statusOrder = $order['Status'];
+$orderId = $order['Id'];
 //load view
 require('admin/views/order/view.php');

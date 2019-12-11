@@ -188,7 +188,7 @@
                             <a href="admin.php?controller=order&amp;action=order_complete"><i class="fa fa-table fa-fw"></i>Danh sách đã xử lý</a>
                         </li>
                         <li>
-                            <a href="admin.php?controller=order&amp;action=delived"><i class="fa fa-table fa-fw"></i>Danh sách đã giao</a>
+                            <a href="admin.php?controller=order&amp;action=order_delived"><i class="fa fa-table fa-fw"></i>Danh sách đã giao</a>
                         </li>
                         <li>
                             <a href="admin.php?controller=order"><i class="fa fa-table fa-fw"></i>Danh sách đơn hàng</a>

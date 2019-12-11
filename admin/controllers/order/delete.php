@@ -3,7 +3,9 @@ require_once('admin/models/orders.php');
 
 
 function deleteOrder() {
-	$sql = 'update orders set Status = 2 where Id = '.$_GET['oid'];
+	$sql = 'update orders set Status = 2, accepter = '.$_SESSION['user']['Id'];
+	$sql = $sql.', ProcessingTime = now()';
+	$sql = $sql.' where Id = '.$_GET['oid'];
 	mysql_query($sql) or die(mysql_error());
 }
 
@@ -14,4 +16,6 @@ if ($_GET['org']=='process') {
 	// print("<pre>".print_r($_GET['oid'],true)."</pre>");
 } else if ($_GET['org']=='complete') {
 	header('location:admin.php?controller=order&action=order_complete');
+} else {
+	header('location:admin.php?controller=order&action=index');
 }
