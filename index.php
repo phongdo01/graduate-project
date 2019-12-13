@@ -1,12 +1,14 @@
  <!-- trang giao dien -->
 <?php
 session_start();
+
 require_once('lib/model.php');
 require_once('website/models/cart.php');
 require "lib/header.php";
 require "lib/counter.php";
 $count_file='counter.txt';
 $ip_file = 'ip.txt';
+
 function counting_ip(){
     $ip= $_SERVER['REMOTE_ADDR'];
     global $count_file, $ip_file;
@@ -29,6 +31,4 @@ if (file_exists($file)) {
     require($file);
 } else {
     show_404();
-print("<pre>".print_r($_GET,true)."</pre>");
-    
 }

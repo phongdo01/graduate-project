@@ -4,3 +4,7 @@ function livesport_delete($id) {
     $sql = "DELETE FROM livesport WHERE id=$id";
     mysql_query($sql) or die(mysql_error());
 }
+function convertLinkYoutube($link) {
+	
+}
+?>

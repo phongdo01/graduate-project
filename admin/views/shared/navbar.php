@@ -238,6 +238,9 @@
                 <li>
                     <a href="admin.php?controller=counter"><i class="fa fa-tasks fa-fw"></i> Thống kê online</a>
                 </li>
+                <li>
+                    <a href="admin.php?controller=revenue"><i class="fa fa-tasks fa-fw"></i> Thống kê doanh số</a>
+                </li>
 
                 <li>
                     <a href="index.php" target="_blank"><i class="fa fa-home fa-fw"></i>Trang chủ<span class="fa arrow"></span></a>

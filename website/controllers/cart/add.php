@@ -1,5 +1,6 @@
 <?php
 $pid = intval($_GET['id']);
+// print("<pre>".print_r($_GET['id'],true)."</pre>");die();
 cart_add($pid);
 echo $pid;
 header('location:http://localhost:8080/ShopOnline/cart');

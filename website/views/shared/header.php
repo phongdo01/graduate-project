@@ -68,7 +68,7 @@ $parent_menus = get_all('categories',$options_parent_menu);
             </div>
             <div class="top-nav">
                 <ul class="memenu skyblue">
-                    <li><a href="home">Trang chủ</a></li>
+                   <!--  <li><a href="home">Trang chủ</a></li> -->
                     <?php foreach ($parent_menus as $parent_menu): $parentId = $parent_menu['Id']; ?>
                         <?php if ($parent_menu['Id'] != 3): ?>
                             <li class="grid"><a

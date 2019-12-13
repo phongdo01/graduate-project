@@ -38,11 +38,11 @@ if (!empty($_GET)) {
 		$sqlUpdateQuantity = 'update product set quantity = quantity - '.$result['Quantity'];
 		$sqlUpdateQuantity = $sqlUpdateQuantity.', sold = sold + '.$result['Quantity'];
 		$sqlUpdateQuantity = $sqlUpdateQuantity.' where Id = '.$result['ProductId'];
-		// print("<pre>".print_r($sqlUpdateQuantity,true)."</pre>");	
+		print("<pre>".print_r($sqlUpdateQuantity,true)."</pre>");	
 		mysql_query($sqlUpdateQuantity) or die(mysql_error());
 	}
 	// print("<pre>".print_r($results,true)."</pre>");die();
 }
-header('location:admin.php?controller=order&action=order_complete');
+header('location:admin.php?controller=order&action=order_delived');
 ?>
 
