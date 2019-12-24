@@ -50,7 +50,7 @@ $parent_menus = get_all('categories',$options_parent_menu);
             <div class="top_left">
                 <form style="margin-bottom:0em " action="http://localhost:8080/ShopOnline/search/" method="get"
                       onsubmit="return false;">
-                    <input type=search name='q' id='q' value="Nhập từ khóa..." onfocus="this.value = '';"
+                    <input style="border-radius: 5px;" type=search name='q' id='q' value="Nhập từ khóa..." onfocus="this.value = '';"
                            onblur="if (this.value == '') {this.value = 'Nhập từ khóa...';}">
                     <input type="submit" value="Tìm kiếm"
                            onclick="window.location.href=this.form.action + this.form.q.value;" class="input-search"/>
@@ -67,7 +67,7 @@ $parent_menus = get_all('categories',$options_parent_menu);
                 <a href="index.php"><h1>Shop Online</h1></a>
             </div>
             <div class="top-nav">
-                <ul class="memenu skyblue">
+                <ul class="memenu skyblue" id = "memenuer">
                    <!--  <li><a href="home">Trang chủ</a></li> -->
                     <?php foreach ($parent_menus as $parent_menu): $parentId = $parent_menu['Id']; ?>
                         <?php if ($parent_menu['Id'] != 3): ?>
@@ -102,7 +102,7 @@ $parent_menus = get_all('categories',$options_parent_menu);
                 </ul>
             </div>
             <div class="cart box_1">
-                <a href="cart"><i class="glyphicon glyphicon-shopping-cart"></i> Giỏ hàng : <?php echo cart_number(); ?> sp</a>
+                <a href="cart" style="margin-left: 50px"><i class="glyphicon glyphicon-shopping-cart"></i> Giỏ hàng : <?php echo cart_number(); ?> sp</a>
                 <div class="clearfix"></div>
             </div>
         </div>

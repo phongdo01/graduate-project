@@ -2,7 +2,7 @@
 function user_login($email, $password) {
     $sql = "SELECT * FROM user WHERE email='$email' AND password='$password' LIMIT 0,1";
     $query = mysql_query($sql) or die(mysql_error());
-    
+    $_SESSION['loginStatus'] = true;
     if (mysql_num_rows($query)>0) {
         $info_login = mysql_fetch_assoc($query);
         // neu nguoi dang nhap la nhan vien(role = 2)
@@ -20,6 +20,8 @@ function user_login($email, $password) {
         }
         $_SESSION['user'] = $info_login;
         return true;
+    } else {
+        $_SESSION['loginStatus'] = false;
     }
     return false;
 }

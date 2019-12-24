@@ -3,6 +3,7 @@
 .memenu li{display:inline-block;text-align:left;}
 ul.memenu.skyblue {text-align: center;}
 .memenu>li>a{  font-family: 'Lato, sans-serif';float:left;padding: 5px 25px 5px 25px;color:#000000;font-weight:800;text-decoration:none;text-transform:uppercase;transition:color .4s ease-in-out;-moz-transition:color .4s ease-in-out;-webkit-transition:color .4s ease-in-out;-o-transition:color .4s ease-in-out}
+
 .memenu>li>.mepanel {
     position: absolute;
     display: none;
@@ -171,5 +172,10 @@ skyblue .mepanel img:hover,.skyblue form.contact input[type="text"]:focus,.skybl
     .flexslider .slides > li {
         height: 252px!important;
     }
+
 }
+    #memenuer>li>a{  font-family: 'Lato, sans-serif';float:left;padding: 5px 10px 5px 10px;color:#000000;font-weight:800;text-decoration:none;text-transform:uppercase;transition:color .4s ease-in-out;-moz-transition:color .4s ease-in-out;-webkit-transition:color .4s ease-in-out;-o-transition:color .4s ease-in-out}
+    #memenuer {
+        margin-left: 28px;
+    }
 	

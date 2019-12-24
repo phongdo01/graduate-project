@@ -30,7 +30,7 @@ $contactinfo = get_a_record('contactinfo',1);
                 </h1>
                 <address>
 
-                    <p><i class="fa fa-envelope pr-10"></i> Email : <a href="javascript:;"><?php echo  $contactinfo['Email']?></a></p>
+                    <p><i class="fa fa-envelope pr-10"></i> Email : <a href="https://mail.google.com/mail/u/0/#inbox?compose=new"><?php echo  $contactinfo['Email']?></a></p>
 
                     <p><i class="fa fa-facebook pr-10"></i>  Facebook : <a href="https://www.facebook.com/phong.do.00" target="_blank"><?php echo  $contactinfo['Facebook']?></a></p>
 
@@ -84,7 +84,7 @@ $contactinfo = get_a_record('contactinfo',1);
 <!--small footer start -->
 <div class="footer-small">
     <div class="container">
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-lg-6 col-sm-6 pull-right">
                 <ul class="social-link-footer list-unstyled">
                     <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".1s"><a href="#"><i
@@ -110,7 +110,7 @@ $contactinfo = get_a_record('contactinfo',1);
                     <p>&copy; Copyright - Pooooo</p>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 

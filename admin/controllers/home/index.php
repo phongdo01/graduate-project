@@ -81,4 +81,9 @@ $options_order_new = array(
 );
 $order_new = Selecct_a_record('orders', $options_order_new);
 //load view
+// set loginStatus to display 
+
 require('admin/views/home/index.php');
+if (isset($_SESSION['loginStatus'])){
+    unset($_SESSION['loginStatus']);
+}
